@@ -1,4 +1,4 @@
 class FamilySerializer < ActiveModel::Serializer
-  attributes :id, :phone, :relationship, :numofvisits, :photo, :notes, :hide
+  attributes :id, :name, :phone, :relationship, :numofvisits, :photo, :notes, :hide
   has_one :city
 end

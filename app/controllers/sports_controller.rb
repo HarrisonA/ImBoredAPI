@@ -46,6 +46,6 @@ class SportsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def sport_params
-      params.require(:sport).permit(:url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+      params.require(:sport).permit(:url, :name, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
     end
 end

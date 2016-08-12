@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160812084953) do
   end
 
   create_table "families", force: :cascade do |t|
+    t.string   "name"
     t.string   "phone"
     t.string   "relationship"
     t.integer  "numofvisits"
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 20160812084953) do
   end
 
   create_table "sports", force: :cascade do |t|
+    t.string   "name"
     t.string   "url"
     t.text     "description"
     t.string   "why"
