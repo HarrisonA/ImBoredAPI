@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: MyString
+  relationship: MyString
+  numofvisits: 1
+  photo: MyString
+  notes: MyText
+  city: one
+  hide: false
+
+two:
+  phone: MyString
+  relationship: MyString
+  numofvisits: 1
+  photo: MyString
+  notes: MyText
+  city: two
+  hide: false

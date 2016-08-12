@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  description: MyText
+  why: MyString
+  numofvisits: 1
+  photo: MyString
+  notes: MyText
+  city: one
+  hide: false
+
+two:
+  name: MyString
+  url: MyString
+  description: MyText
+  why: MyString
+  numofvisits: 1
+  photo: MyString
+  notes: MyText
+  city: two
+  hide: false
