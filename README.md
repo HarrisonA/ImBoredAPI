@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ImBoredAPI - that serves the ImBoredFrontEnd app.
 
-Things you may want to cover:
+Built with Rails 5.  
 
-* Ruby version
 
-* System dependencies
+# Install
+1. Clone the repo (of course).
 
-* Configuration
+2. cd into the "ImBoredAPI" directory and run "bundle exec rake db:create", then "bundle exec rake db:migrate".
+Run "rails s" to start the Rails API server.
 
-* Database creation
 
-* Database initialization
+# Routes
+GET requests:
+/cities
+/parks
+/families
+/bars
+/movies
+/restaurants
+/sports
+/travel
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Future plans
+Create user signup and authentication so data can be added to the following
+POST routes:
+/parks
+/families
+/bars
+/movies
+/restaurants
+/sports
+/travel
