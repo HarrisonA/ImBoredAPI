@@ -21,7 +21,7 @@ GET requests:
 /movies
 /restaurants
 /sports
-/travel
+/travels
 
 ### Future plans
 Create user signup and authentication so data can be added to the following
@@ -32,4 +32,4 @@ POST routes:
 /movies
 /restaurants
 /sports
-/travel
+/travels

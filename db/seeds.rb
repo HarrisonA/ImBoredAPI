@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+City.reset_column_information
+Bar.reset_column_information
+Movie.reset_column_information
+Park.reset_column_information
+Restaurant.reset_column_information
+Travel.reset_column_information
+Sport.reset_column_information
+Family.reset_column_information
 
 cit1 = City.create(name: "Oakland")
 cit2 = City.create(name: "SF")
@@ -27,9 +35,9 @@ rest1 = Restaurant.create(name: "RestaurantOne", url: "www.RestaurantOne.com", d
 rest2 = Restaurant.create(name: "RestaurantTwo", url: "www.RestaurantTwo.com", description: "Blah blah", why: "this Restaurant is fun", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit2)
 rest3 = Restaurant.create(name: "RestaurantThree", url: "www.RestaurantThree.com", description: "Blah blah", why: "This Restaurant is quiet", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit3)
 
-travel1 = Travel.create(name: "TravelOne", url: "www.TravelOne.com", description: "Blah blah", why: "I love this Travel", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit1)
-travel2 = Travel.create(name: "TravelTwo", url: "www.TravelTwo.com", description: "Blah blah", why: "this Travel is fun", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit2)
-travel3 = Travel.create(name: "TravelThree", url: "www.TravelThree.com", description: "Blah blah", why: "This Bar is quiet", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit3)
+travel1 = Travel.create(name: "TravelOne", url: "www.TravelOne.com", description: "Blah blah", why: "I love this Travel", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit4)
+travel2 = Travel.create(name: "TravelTwo", url: "www.TravelTwo.com", description: "Blah blah", why: "this Travel is fun", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit4)
+travel3 = Travel.create(name: "TravelThree", url: "www.TravelThree.com", description: "Blah blah", why: "This Bar is quiet", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit4)
 
 sport1 = Sport.create(name: "SportOne", url: "www.SportOne.com", description: "Blah blah", why: "I love this Sport", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit1)
 sport2 = Sport.create(name: "SportTwo", url: "www.SportTwo.com", description: "Blah blah", why: "this Sport is fun", numofvisits:0, photo:"no photo yet", notes: "none", hide:false, city: cit2)
