@@ -44,8 +44,23 @@ class CitiesController < ApplicationController
       @city = City.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # deserialize the incoming parameters – turn them from JSON API into
+    # a standard Ruby hash
     def city_params
-      params.require(:city).permit(:name)
+      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
     end
+
+    # Only allow a trusted parameter "white list" through.
+    # NOTE: UPDATE THE ABOVE LATER with something like:
+
+   #    def deserialized_params
+   #      ActionController::Parameters.new(
+   #        ActiveModelSerializers::Deserialization.jsonapi_parse!(params)
+   #      )
+   #    end
+   #
+   #    def city_params
+   #      deserialized_params.permit(:name)
+   #    end
+   #
 end

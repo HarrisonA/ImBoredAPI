@@ -44,8 +44,22 @@ class BarsController < ApplicationController
       @bar = Bar.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def bar_params
-      params.require(:bar).permit(:name, :url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
     end
+
+    # Only allow a trusted parameter "white list" through.
+    # params.require(:bar).permit(:name, :url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+    # NOTE: UPDATE THE ABOVE LATER with something like:
+
+   #    def deserialized_params
+   #      ActionController::Parameters.new(
+   #        ActiveModelSerializers::Deserialization.jsonapi_parse!(params)
+   #      )
+   #    end
+   #
+   #    def bar_params
+   #      deserialized_params.permit(:x,:y...)
+   #    end
+   #
 end

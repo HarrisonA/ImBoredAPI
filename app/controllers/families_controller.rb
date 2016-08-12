@@ -44,8 +44,23 @@ class FamiliesController < ApplicationController
       @family = Family.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # deserialize the incoming parameters – turn them from JSON API into
+    # a standard Ruby hash
     def family_params
-      params.require(:family).permit(:phone, :name, :relationship, :numofvisits, :photo, :notes, :city_id, :hide)
-    end
-end
+      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
+      end
+
+      # Only allow a trusted parameter "white list" through.
+      # NOTE: UPDATE THE ABOVE LATER with something like:
+
+      #    def deserialized_params
+      #      ActionController::Parameters.new(
+      #        ActiveModelSerializers::Deserialization.jsonapi_parse!(params)
+      #      )
+      #    end
+      #
+      #    def family_params
+      #      deserialized_params.permit(:phone, :name, :relationship, :numofvisits, :photo, :notes, :city_id, :hide)
+      #    end
+      #
+      end

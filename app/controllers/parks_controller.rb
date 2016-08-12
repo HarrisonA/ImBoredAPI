@@ -44,8 +44,22 @@ class ParksController < ApplicationController
       @park = Park.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def park_params
-      params.require(:park).permit(:name, :url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
     end
+
+    # Only allow a trusted parameter "white list" through.
+    # NOTE: UPDATE THE ABOVE LATER with something like:
+
+   #    def deserialized_params
+   #      ActionController::Parameters.new(
+   #        ActiveModelSerializers::Deserialization.jsonapi_parse!(params)
+   #      )
+   #    end
+   #
+   #    def park_params
+   #      deserialized_params.permit(:name, :url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+   #    end
+   #
+
 end

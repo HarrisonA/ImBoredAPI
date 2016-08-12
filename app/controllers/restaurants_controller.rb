@@ -44,8 +44,21 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
     end
+
+    # Only allow a trusted parameter "white list" through.
+    # NOTE: UPDATE THE ABOVE LATER with something like:
+
+   #    def deserialized_params
+   #      ActionController::Parameters.new(
+   #        ActiveModelSerializers::Deserialization.jsonapi_parse!(params)
+   #      )
+   #    end
+   #
+   #    def restaurant_params
+   #      deserialized_params.permit(:name, :url, :description, :why, :numofvisits, :photo, :notes, :city_id, :hide)
+   #    end
+   #
 end
