@@ -6,6 +6,7 @@ Built with Rails 5.
 
 
 # Install
+(Ruby version 2.2 or higher, Rails 5 should be installed on your computer)
 1. Clone the repo (of course).
 
 2. cd into the "ImBoredAPI" directory and run "bundle exec rake db:create", then "bundle exec rake db:migrate".
