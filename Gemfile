@@ -23,6 +23,24 @@ gem 'rack-cors'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # Clears your test db before each test runs
+  gem 'database_cleaner'
+
+  # An easy way to generate ActiveRecord objects with nice syntax
+  gem "factory_girl_rails", "~> 4.0"
+
+  # A gem that provides you with fake data
+  gem 'faker'
+
+  # Testing framework
+  gem 'rspec-rails'
+
+  # Mock API responses
+  gem 'webmock'
+
+  # Record live API responses and store them for webmock
+  gem 'vcr'
 end
 
 group :development do
