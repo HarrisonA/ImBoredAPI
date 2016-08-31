@@ -2,6 +2,10 @@ FactoryGirl.define do
   factory :city do
     trait :with_restaurants do
 
+      sequence :name do |n|
+        "#{Faker::Book.title}-#{n}"
+      end
+
       transient do
         restaurant_count 1 # default restaurant count
       end

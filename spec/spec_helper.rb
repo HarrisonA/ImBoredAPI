@@ -97,11 +97,17 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
+
+  # Create temp database (transaction).  Clean the rows when done, but leave
+  # the columns (for the next test)
   config.before :suite do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with :truncation
   end
 
+
+  # after each test, clean up the DB.
+  # example comes form our spec/models/city file (other )
   config.around :each do |example|
     DatabaseCleaner.cleaning do
       example.run
